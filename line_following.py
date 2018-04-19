@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+import ir_test as ir
 import time
 
 GPIO.setwarnings(False)
@@ -53,5 +54,9 @@ def TurnLeft():
 
 def main():
     while True:
-        print("Hello world!")
+        if ir.A == 1 and ir.B == 0 and ir.C == 0 and ir.D == 1:
+            forward()
+        if ir.A == 1 and ir.B == 1 and ir.C == 0 and ir.D == 1:
+
+
 
