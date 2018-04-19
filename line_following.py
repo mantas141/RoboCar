@@ -50,4 +50,7 @@ def TurnLeft():
     GPIO.output(bin2, GPIO.LOW)
 
 
+
 def main():
+    while True:
+
