@@ -53,4 +53,5 @@ def TurnLeft():
 
 def main():
     while True:
+        print("Hello world!")
 
