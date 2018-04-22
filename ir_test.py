@@ -12,7 +12,7 @@ IRsensor4 = 21 # Broadcom pin - Up for change
 GPIO.setmode(GPIO.BCM) # Broadcom pin-numbering scheme
 GPIO.setup(IRsensor1, GPIO.IN) # sensor set as input
 
-# PROGRAM
+# PROGRAM - 0 = reflective surface, 1 = nonreflective surface
 while True:
         A = GPIO.input(IRsensor1)
 		B = GPIO.input(IRsensor2)

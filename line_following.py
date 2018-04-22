@@ -54,9 +54,14 @@ def TurnLeft():
 
 def main():
     while True:
-        if ir.A == 1 and ir.B == 0 and ir.C == 0 and ir.D == 1:
+        if ir.A == 0 and ir.B == 1 and ir.C == 1 and ir.D == 0:
             forward()
-        if ir.A == 1 and ir.B == 1 and ir.C == 0 and ir.D == 1:
-
-
-
+        elif ir.A == 0 and ir.B == 1 and ir.C == 0 and ir.D == 0:
+            TurnLeft()
+        elif ir.A == 1 and ir.B == 1 and ir.C == 0 and ir.D == 0:
+            TurnLeft()
+        elif ir.A == 0 and ir.B == 0 and ir.C == 1 and ir.D == 0:
+            TurnRight()
+        elif ir.A == 0 and ir.B == 0 and ir.C == 1 and ir.D == 1:
+            TurnRight()
+        time.sleep(0.1)
