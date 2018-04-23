@@ -8,13 +8,15 @@ document.onkeydown = function(event) {
 	var status = document.getElementById('status');
 	status.innerHTML = "DOWN Event Fired For : "+key_press;
 	if(key_press == "W"){
-		alert("Put script to run specific for 'W' key here"); #To make it stop when releasing the key the pithon script could be timed to x seconds
+		shell_exec(sudo python #location here); #To make it stop when releasing the key the pithon script could be timed to x seconds
 	} else if(key_press == "A") {
-		alert("Put script to run specific for 'A' key here");
+		shell_exec(sudo python #location here);
 	} else if(key_press == "S") {
-		alert("Put script to run specific for 'S' key here");
+		shell_exec(sudo python #location here);
 	} else if(key_press == "D") {
-		alert("Put script to run specific for 'D' key here");
+		shell_exec(sudo python #location here);
+	} else if(key_code == 32) {
+	    shell_exec(sudo python #location here);
 	}
 }
 document.onkeyup = function(event){
