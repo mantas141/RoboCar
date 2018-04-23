@@ -19,8 +19,8 @@ GPIO.setup(bin1, GPIO.OUT)
 GPIO.setup(bin2, GPIO.OUT)
 GPIO.setup(PWMA, GPIO.OUT)
 
-speed_a = GPIO.PWM(PWMA, 50)  # a is right side engines
-speed_b = GPIO.PWM(PWMB, 50)  # b is left side engines
+speed_a = GPIO.PWM(PWMA, 50)  # a is right side engines - speed might need adjustments
+speed_b = GPIO.PWM(PWMB, 50)  # b is left side engines - speed might need adjustments
 
 
 def forward():
