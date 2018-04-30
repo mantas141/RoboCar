@@ -14,9 +14,9 @@ GPIO.setup(IRsensor1, GPIO.IN) # sensor set as input
 
 # PROGRAM - 0 = reflective surface, 1 = nonreflective surface
 while True:
-        A = GPIO.input(IRsensor1)
-		B = GPIO.input(IRsensor2)
-		C = GPIO.input(IRsensor3)
-		D = GPIO.input(IRsensor4)
+        A = GPIO.input(IRsensor4)
+		B = GPIO.input(IRsensor3)
+		C = GPIO.input(IRsensor2)
+		D = GPIO.input(IRsensor1)
         print (A, B, C, D)
         time.sleep(0.5)
