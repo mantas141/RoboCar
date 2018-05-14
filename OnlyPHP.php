@@ -11,23 +11,23 @@
 <?php 
 if (isset($_POST['Forward']))
 {
-	exec('sudo python'); #location of Forward
+	exec('sudo python /forward.py'); #location of Forward
 }
 if (isset($_POST['Backward']))
 {
-	exec('sudo python'); #location of Backward
+	exec('sudo python back.py'); #location of Backward
 }
 if (isset($_POST['Left']))
 {
-	exec('sudo python'); #location of Left
+	exec('sudo python left.py'); #location of Left
 }
 if (isset($_POST['Right']))
 {
-	exec('sudo python'); #location of Right
+	exec('sudo python right.py'); #location of Right
 }
 if (isset($_POST['Stop']))
 {
-	exec('sudo python'); #location of Stop
+	exec('sudo python stop.py'); #location of Stop
 }
 ?>
 </head>
