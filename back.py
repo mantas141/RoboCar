@@ -19,19 +19,17 @@ GPIO.setup(BIN2, GPIO.OUT)
 GPIO.setup(PWMA, GPIO.OUT)
 GPIO.setup(PWMB, GPIO.OUT)
 
+motor_a = GPIO.PWM(PWMA, 50)  # a is right side engines
+motor_b = GPIO.PWM(PWMB, 50)  # b is left side engines
+
+motor_a.start(80)
+motor_b.start(80)
+
+
 GPIO.output(AIN1, GPIO.LOW)
 GPIO.output(AIN2, GPIO.HIGH)
 GPIO.output(BIN1, GPIO.LOW)
 GPIO.output(BIN2, GPIO.HIGH)
 
-#speeds need to be adjusted
-
-rightmotor = GPIO.PWM(PWMA, 50)
-rightmotor.start(0)
-
-rightmotor.ChangeDutyCycle(100)
-
-leftmotor = GPIO.PWM(PWMB, 50)
-leftmotor.start(0)
-
-leftmotor.ChangeDutyCycle(100)
+motor_a.ChangeDutyCycle(50)
+motor_b.ChangeDutyCycle(50)
