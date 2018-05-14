@@ -1,12 +1,12 @@
 import RPi.GPIO as GPIO
 import time
 
-PWMA = X
-PWMB = X
-AIN1 = X
-AIN2 = X
-BIN1 = X
-BIN2 = X
+PWMA = 18
+PWMB = 13
+AIN1 = 2
+AIN2 = 3
+BIN1 = 14
+BIN2 = 15
 
 GPIO.setwarnings(False)
 
@@ -19,8 +19,8 @@ GPIO.setup(BIN2, GPIO.OUT)
 GPIO.setup(PWMA, GPIO.OUT)
 GPIO.setup(PWMB, GPIO.OUT)
 
-GPIO.output(AIN1, GPIO.LOW)
-GPIO.output(AIN2, GPIO.HIGH)
+GPIO.output(AIN1, )
+GPIO.output(AIN2, )
 GPIO.output(BIN1, )
 GPIO.output(BIN2, )
 
