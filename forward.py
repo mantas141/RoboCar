@@ -25,7 +25,6 @@ motor_b = GPIO.PWM(PWMB, 50)  # b is left side engines
 motor_a.start(80)
 motor_b.start(80)
 
-
 GPIO.output(AIN1, GPIO.LOW)
 GPIO.output(AIN2, GPIO.HIGH)
 GPIO.output(BIN1, GPIO.HIGH)
