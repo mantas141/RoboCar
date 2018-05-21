@@ -42,3 +42,8 @@ IR_C = GPIO.input(IRsensor2)
 IR_D = GPIO.input(IRsensor1)"""
 
 #Echo setup
+Echo = 17
+Trigger = 27
+
+GPIO.setup(Echo, GPIO.IN) # sensor set as input
+GPIO.setup(Trigger, GPIO.OUT) # sensor set as input
