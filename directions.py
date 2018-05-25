@@ -2,40 +2,40 @@ import RPi.GPIO as GPIO
 import board_setup as b
 
 #Motor functions
-def forward():
+def forward(speed):
     GPIO.output(b.ain1, GPIO.LOW)
     GPIO.output(b.ain2, GPIO.HIGH)
     GPIO.output(b.bin1, GPIO.HIGH)
     GPIO.output(b.bin2, GPIO.LOW)
-    b.motor_a.ChangeDutyCycle(75)
-    b.motor_b.ChangeDutyCycle(75)
+    b.motor_a.ChangeDutyCycle(speed)
+    b.motor_b.ChangeDutyCycle(speed)
 
 
-def backwards():
+def backwards(speed):
     GPIO.output(b.ain1, GPIO.HIGH)
     GPIO.output(b.ain2, GPIO.LOW)
     GPIO.output(b.bin1, GPIO.LOW)
     GPIO.output(b.bin2, GPIO.HIGH)
-    b.motor_a.ChangeDutyCycle(75)
-    b.motor_b.ChangeDutyCycle(75)
+    b.motor_a.ChangeDutyCycle(speed)
+    b.motor_b.ChangeDutyCycle(speed)
 
 
-def TurnRight():
-    GPIO.output(b.ain1, GPIO.LOW)  # a side/right side going forwards
-    GPIO.output(b.ain2, GPIO.HIGH)
-    GPIO.output(b.bin1, GPIO.LOW)  # b side/left side going backwards
-    GPIO.output(b.bin2, GPIO.HIGH)
-    b.motor_a.ChangeDutyCycle(75)
-    b.motor_b.ChangeDutyCycle(75)
-
-
-def TurnLeft():
+def TurnRight(speed):
     GPIO.output(b.ain1, GPIO.HIGH)  # a side/right side going backwards
     GPIO.output(b.ain2, GPIO.LOW)
     GPIO.output(b.bin1, GPIO.HIGH)  # b side/left side going forwards
     GPIO.output(b.bin2, GPIO.LOW)
-    b.motor_a.ChangeDutyCycle(75)
-    b.motor_b.ChangeDutyCycle(75)
+    b.motor_a.ChangeDutyCycle(speed)
+    b.motor_b.ChangeDutyCycle(speed)
+
+
+def TurnLeft(speed):
+    GPIO.output(b.ain1, GPIO.LOW)  # a side/right side going forwards
+    GPIO.output(b.ain2, GPIO.HIGH)
+    GPIO.output(b.bin1, GPIO.LOW)  # b side/left side going backwards
+    GPIO.output(b.bin2, GPIO.HIGH)
+    b.motor_a.ChangeDutyCycle(speed)
+    b.motor_b.ChangeDutyCycle(speed)
 
 #IR functions
 def ir_read():

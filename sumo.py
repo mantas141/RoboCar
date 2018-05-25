@@ -1,40 +1,57 @@
 import directions as d
 import echo as e
 import time
+import signal
+import RPi.GPIO as GPIO
+
+def handler(signum, frame): #stop when ctrl-c is recieved
+    print("Signal handler called with signal", signum)
+    print("Exiting...")
+    GPIO.output(18, GPIO.LOW)
+    GPIO.output(13, GPIO.LOW)
+    GPIO.cleanup()
+    exit(0)
 
 # max distance 180 cm
 count = 0
+range = 70
+
 def main():
     #while count < 4:
     #    scout()
     while True:
         scout()
 
-def backwards():
-    d.backwards()
+def backwards(speed1, speed2):
+    d.backwards(speed1)
     time.sleep(1)
-    d.TurnLeft()
-    time.sleep(0.2)
+    d.TurnLeft(speed2)
+    time.sleep(0.5)
     global count
     count += 1
 
 def scout():
     dist = (e.reading(0))
-    print(dist)
     if all(t == 1 for t in d.ir_read()):
-        d.backwards()
+        print(dist)
+        d.backwards(75)
         time.sleep(0.5)
         print("backwards")
-    elif dist > 180 and any(t == 0 for t in d.ir_read()):
-        d.TurnLeft()
+    elif dist > range:
+        print(dist)
+        d.TurnLeft(50)
         print("left")
-    elif dist < 180 and any(t == 0 for t in d.ir_read()):
-        d.forward()
-        print("forward")
-        time.sleep(1)
-        backwards()
+        time.sleep(0.2)
+    elif dist < range:
+        while any(t == 0 for t in d.ir_read()):
+            print(dist)
+            d.forward(65)
+            print("forward")
+            time.sleep(0.01)
+        backwards(65, 50)
 
-
-
+# When recieving ctrl-C
+signal.signal(signal.SIGINT, handler)
 
 main()
+
