@@ -7,8 +7,8 @@ def forward():
     GPIO.output(b.ain2, GPIO.HIGH)
     GPIO.output(b.bin1, GPIO.HIGH)
     GPIO.output(b.bin2, GPIO.LOW)
-    b.motor_a.ChangeDutyCycle(70)
-    b.motor_b.ChangeDutyCycle(70)
+    b.motor_a.ChangeDutyCycle(75)
+    b.motor_b.ChangeDutyCycle(75)
 
 
 def backwards():
@@ -16,8 +16,8 @@ def backwards():
     GPIO.output(b.ain2, GPIO.LOW)
     GPIO.output(b.bin1, GPIO.LOW)
     GPIO.output(b.bin2, GPIO.HIGH)
-    b.motor_a.ChangeDutyCycle(70)
-    b.motor_b.ChangeDutyCycle(70)
+    b.motor_a.ChangeDutyCycle(75)
+    b.motor_b.ChangeDutyCycle(75)
 
 
 def TurnRight():
@@ -25,8 +25,8 @@ def TurnRight():
     GPIO.output(b.ain2, GPIO.HIGH)
     GPIO.output(b.bin1, GPIO.LOW)  # b side/left side going backwards
     GPIO.output(b.bin2, GPIO.HIGH)
-    b.motor_a.ChangeDutyCycle(65)
-    b.motor_b.ChangeDutyCycle(65)
+    b.motor_a.ChangeDutyCycle(75)
+    b.motor_b.ChangeDutyCycle(75)
 
 
 def TurnLeft():
@@ -34,8 +34,8 @@ def TurnLeft():
     GPIO.output(b.ain2, GPIO.LOW)
     GPIO.output(b.bin1, GPIO.HIGH)  # b side/left side going forwards
     GPIO.output(b.bin2, GPIO.LOW)
-    b.motor_a.ChangeDutyCycle(65)
-    b.motor_b.ChangeDutyCycle(65)
+    b.motor_a.ChangeDutyCycle(75)
+    b.motor_b.ChangeDutyCycle(75)
 
 #IR functions
 def ir_read():
