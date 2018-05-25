@@ -5,7 +5,9 @@ import time
 # max distance 180 cm
 count = 0
 def main():
-    while count < 4:
+    #while count < 4:
+    #    scout()
+    while True:
         scout()
 
 def backwards():
@@ -16,15 +18,21 @@ def backwards():
     global count
     count += 1
 
-
 def scout():
-    r = range(5, 180)
-    if any(t == 1 for t in d.ir_read()):
-        backwards()
-    elif e.reading(0) < 180 and any(t == 0 for t in d.ir_read()):
+    dist = (e.reading(0))
+    print(dist)
+    if all(t == 1 for t in d.ir_read()):
+        d.backwards()
+        time.sleep(0.5)
+        print("backwards")
+    elif dist > 180 and any(t == 0 for t in d.ir_read()):
         d.TurnLeft()
-    elif e.reading(0) in r and any(t == 0 for t in d.ir_read()):
+        print("left")
+    elif dist < 180 and any(t == 0 for t in d.ir_read()):
         d.forward()
+        print("forward")
+        time.sleep(1)
+        backwards()
 
 
 
