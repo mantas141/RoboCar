@@ -7,8 +7,8 @@ def forward():
     GPIO.output(b.ain2, GPIO.HIGH)
     GPIO.output(b.bin1, GPIO.HIGH)
     GPIO.output(b.bin2, GPIO.LOW)
-    b.motor_a.ChangeDutyCycle(50)
-    b.motor_b.ChangeDutyCycle(50)
+    b.motor_a.ChangeDutyCycle(70)
+    b.motor_b.ChangeDutyCycle(70)
 
 
 def backwards():
@@ -16,8 +16,8 @@ def backwards():
     GPIO.output(b.ain2, GPIO.LOW)
     GPIO.output(b.bin1, GPIO.LOW)
     GPIO.output(b.bin2, GPIO.HIGH)
-    b.motor_a.ChangeDutyCycle(50)
-    b.motor_b.ChangeDutyCycle(50)
+    b.motor_a.ChangeDutyCycle(70)
+    b.motor_b.ChangeDutyCycle(70)
 
 
 def TurnRight():

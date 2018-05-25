@@ -20,7 +20,7 @@ def main():
         elif ir_read[3] == 1:
             d.TurnLeft()
             print ("Turning Left")
-        time.sleep(0.2)
+        time.sleep(0.01)
         print (d.ir_read())
 
 main()
