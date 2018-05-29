@@ -2,15 +2,6 @@ import directions as d
 import echo as e
 import time
 import signal
-import RPi.GPIO as GPIO
-
-def handler(signum, frame): #stop when ctrl-c is recieved
-    print("Signal handler called with signal", signum)
-    print("Exiting...")
-    GPIO.output(18, GPIO.LOW)
-    GPIO.output(13, GPIO.LOW)
-    GPIO.cleanup()
-    exit(0)
 
 # max distance 180 cm
 count = 0
@@ -51,7 +42,7 @@ def scout():
         backwards(65, 50)
 
 # When recieving ctrl-C
-signal.signal(signal.SIGINT, handler)
+signal.signal(signal.SIGINT, d.handler)
 
 main()
 

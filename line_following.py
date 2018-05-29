@@ -1,5 +1,7 @@
 import time
 import directions as d
+import signal
+
 
 
 def main():
@@ -22,5 +24,8 @@ def main():
             print ("Turning Left")
         time.sleep(0.01)
         print (d.ir_read())
+
+# When recieving ctrl-C
+signal.signal(signal.SIGINT, d.handler)
 
 main()

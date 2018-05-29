@@ -44,3 +44,12 @@ def ir_read():
     IR_C = GPIO.input(b.IRsensor2)
     IR_D = GPIO.input(b.IRsensor1)
     return [IR_A, IR_B, IR_C, IR_D]
+
+#Handler setup
+def handler(signum, frame): #stop when ctrl-c is recieved
+    print("Signal handler called with signal", signum)
+    print("Exiting...")
+    GPIO.output(b.PWMA, GPIO.LOW)
+    GPIO.output(b.PWMB, GPIO.LOW)
+    GPIO.cleanup()
+    exit(0)

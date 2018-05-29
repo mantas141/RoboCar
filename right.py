@@ -1,3 +1,3 @@
 import directions as d
 
-d.TurnRight(65)
+d.TurnRight(55)
